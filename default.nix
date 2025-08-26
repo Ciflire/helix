@@ -8,7 +8,9 @@
   gitRev ? null,
   grammarOverlays ? [ ],
   includeGrammarIf ? _: true,
-}: let
+  enableSteel ? false,
+}:
+let
   fs = lib.fileset;
 
   src = fs.difference (fs.gitTracked ./.) (
